@@ -1,0 +1,41 @@
+<h1 class="search_results_title">Here's what i found! </h1>
+
+<% if params[:search].present? %>
+  <% if params[:search_type] == "t" %>
+<!--This is for a Movie Title search-->
+    <div>
+      <!--<a href="<%# @imdb_info_var["urlIMDB"] %>">-->
+        <%= link_to image_tag(@imdb_info_var["urlPoster"]), @imdb_info_var["urlIMDB"], class: "movie_poster" %>
+      </a>
+      <h1>
+      <!--<a href="<%= @imdb_info_var["urlIMDB"] %>" class="movie_title">-->
+          <%= link_to "#{@imdb_info_var['title']} (#{@imdb_info_var["year"]})", @imdb_info_var["urlIMDB"], class: "movie_title" %>
+        </a>
+      </h1>
+      <p class="movie_plot italicize"><%= @imdb_info_var["plot"] %> </p>
+      <p class="movie_plot italicize"><%= @imdb_info_var["runtime"].first %><p>
+    <div>
+    <div>
+      <p>Languages availalbe for the film:</p>
+      <ul class="a movie_plot italicize">
+        <% @imdb_info_var['languages'].each do |lang| %>
+          <li><%= lang %> </li>
+        <% end %>
+      <ul>
+    <div>
+  <% else %>
+<!--This is for an Actor's Name search-->
+    <div>
+      <img src="<%= @imdb_info_var["urlPhoto"] %>" style="width:250px;height:300px;float:left;margin: 20px">
+      <h1 class="movie_title" style="color:red"><%= @imdb_info_var["name"]%></h1>
+      <p class="movie_plot italicize"><%= @imdb_info_var["bio"] %><p>
+    <div>
+      <p>Actor Filmography:</p>
+      <ul class="a movie_plot italicize">
+        <% @imdb_info_var['filmographies'][0]['filmography'].each do |film| %>
+          <li><%= film['title'] %> </li>
+        <% end %>
+      <ul>
+    <div>
+  <% end %>
+<% end %>

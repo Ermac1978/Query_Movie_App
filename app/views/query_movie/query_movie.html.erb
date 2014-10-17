@@ -1,0 +1,8 @@
+<%= form_tag "query_movie" do %>
+  Please enter a movie title or actor's name: <input type="text" name="search"/>
+  <select name="search_type">
+    <option value="t">Title</option>
+    <option value="a">Actor</option>
+  </select>
+  <input type="submit" value="Go"/>
+<% end %>

@@ -1,0 +1,55 @@
+// Place all the styles related to the query_movie controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/* unvisited link */
+a:link    {
+    color: red;
+}
+
+/* visited link */
+a:visited {
+    color: blue;
+}
+
+/* mouse over link */
+a:hover   {
+    color: green;
+}
+
+/* selected link */
+a:active  {
+    color: yellow;
+}
+
+ul.a {
+    list-style-type: circle;
+}
+
+.movie_poster {
+    float:left;
+    margin: 20px;
+}
+
+.movie_title {
+    font-family: 'Roboto', serif;
+    font-size: 35px;
+    text-shadow: 4px 4px 4px #aaa;
+}
+
+.movie_plot {
+    font-family: 'Lato', serif;
+    font-size: 15px;
+    text-shadow: 4px 4px 4px #aaa;
+}
+
+.search_results_title {
+    font-family: 'Roboto', serif;
+    font-size: 45px;
+    color: #064817;
+}
+
+.italicize {
+    font-style: italic;
+}
