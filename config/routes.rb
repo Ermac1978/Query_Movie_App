@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
 
-  get 'query_movie', to: 'query_movie#search_results'
+  # get 'query_movie', to: 'query_movie#search_results'
   post 'query_movie', to: 'query_movie#search_results'
 
 
