@@ -1,8 +1,13 @@
+<p>You previously searched for <%=@search2 %> <%= @search %>.  Click here to search for that again.</p>
+<button class="btn btn-default" type="submit"><%= button_to "run that same search again", query_movie_path %></button>
+
+<p> Enter a search below <p>
+
 <%= form_tag "query_movie" do %>
-  Please enter a movie title or actor's name: <input type="text" name="search"/>
+  <input type="text" name="search" value="<%= @search %>"/>
   <select name="search_type">
-    <option value="t">Title</option>
-    <option value="a">Actor</option>
+    <option value="title">Title</option>
+    <option value="actor">Actor</option>
   </select>
   <input type="submit" value="Go"/>
 <% end %>

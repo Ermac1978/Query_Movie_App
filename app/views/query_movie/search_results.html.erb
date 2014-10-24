@@ -1,16 +1,22 @@
+<%= link_to "Root Path", root_path %>
+
+<p> This is what the Cookie currently holds: Search Name =<%= @search %> and Search Type =<%= @search2 %><p>
+
+
 <%= form_tag "query_movie" do %>
-  How about you enter another search?: <input type="text" name="search"/>
+  How about you enter another search?
+  <input type="text" name="search" value="<%= @search %>"/>
   <select name="search_type">
-    <option value="t">Title</option>
-    <option value="a">Actor</option>
+    <option value="title">Title</option>
+    <option value="actor">Actor</option>
   </select>
   <input type="submit" value="Go"/>
 <% end %>
 
 <h1 class="search_results_title">Here's what i found! </h1>
 
-<% if params[:search].present? %>
-  <% if params[:search_type] == "t" %>
+<% if @search.present? %>
+  <% if @search2 == "title" %>
 <!--This is for a Movie Title search-->
     <div>
       <!--<a href="<%# @imdb_info_var["urlIMDB"] %>">-->
