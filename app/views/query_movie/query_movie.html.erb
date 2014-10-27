@@ -1,5 +1,7 @@
-<p>You previously searched for <%=@search2 %> <%= @search %>.  Click here to search for that again.</p>
-<button class="btn btn-default" type="submit"><%= button_to "run that same search again", query_movie_path %></button>
+<% if @search.present? %>
+  <p>You previously searched for <%=@search2 %> <%= @search %>.  Click here to search for that again.</p>
+  <%= button_to "run that same search again", query_movie_path, class: "btn btn-danger" %>
+<% end %>
 
 <p> Enter a search below <p>
 
